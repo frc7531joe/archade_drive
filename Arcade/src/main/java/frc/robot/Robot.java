@@ -10,13 +10,15 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 
+import com.revrobotics.spark.SparkMax;
+
 /**
  * This is a demo program showing the use of the DifferentialDrive class. Runs the motors with
  * arcade steering.
  */
 public class Robot extends TimedRobot {
-  private final PWMSparkMax m_leftMotor = new PWMSparkMax(0);
-  private final PWMSparkMax m_rightMotor = new PWMSparkMax(1);
+  private final SparkMax m_leftMotor = new SparkMax(2);
+  private final SparkMax m_rightMotor = new SparkMax(1);
   private final DifferentialDrive m_robotDrive =
       new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
   private final Joystick m_stick = new Joystick(0);
